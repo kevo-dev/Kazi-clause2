@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Scale } from 'lucide-react';
 import { FIRM_DETAILS } from '../constants';
 
 const Contact: React.FC = () => {
@@ -20,150 +19,137 @@ const Contact: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-[#1a365d] py-24 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
-          <p className="text-slate-300 max-w-2xl mx-auto text-lg font-light">
-            Speak with an advocate today to secure your legal position.
+      <section className="bg-[#0A1128] py-32 text-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-sm font-bold text-[#D4AF37] uppercase tracking-[0.4em] mb-6">Engagement</h2>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none">Begin <span className="text-[#D4AF37]">Dialogue</span></h1>
+          <p className="text-slate-300 max-w-2xl mx-auto text-lg editorial font-light leading-relaxed">
+            Schedule a confidential consultation with our advocates to secure your legal position.
           </p>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
             {/* Contact Details */}
             <div>
-              <h2 className="text-[#d4af37] font-bold uppercase tracking-widest text-sm mb-4">Get in Touch</h2>
-              <h3 className="text-4xl font-bold text-[#1a365d] mb-12">Visit Our Offices</h3>
+              <h2 className="text-[#D4AF37] font-bold uppercase tracking-widest text-xs mb-4">Location & Access</h2>
+              <h3 className="text-4xl font-black text-[#0A1128] mb-12 leading-tight">Nairobi Head Office</h3>
               
-              <div className="space-y-10">
-                <div className="flex items-start space-x-6">
-                  <div className="bg-[#1a365d]/5 p-4 rounded-lg">
-                    <MapPin className="text-[#1a365d] h-6 w-6" />
+              <div className="space-y-12">
+                <div className="flex items-start group">
+                  <div className="bg-slate-50 p-4 rounded-2xl group-hover:bg-[#D4AF37]/10 transition-colors">
+                    <MapPin className="text-[#0A1128] h-6 w-6" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Nairobi Office</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">{FIRM_DETAILS.address}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-6">
-                  <div className="bg-[#1a365d]/5 p-4 rounded-lg">
-                    <Phone className="text-[#1a365d] h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Call Us</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">Main: {FIRM_DETAILS.phone}</p>
-                    <p className="text-slate-600 text-sm leading-relaxed">WhatsApp: +{FIRM_DETAILS.whatsapp}</p>
+                  <div className="ml-6">
+                    <h4 className="font-black text-[#0A1128] mb-2 uppercase text-xs tracking-widest">Address</h4>
+                    <p className="text-slate-600 editorial text-lg">{FIRM_DETAILS.address}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="bg-[#1a365d]/5 p-4 rounded-lg">
-                    <Mail className="text-[#1a365d] h-6 w-6" />
+                <div className="flex items-start group">
+                  <div className="bg-slate-50 p-4 rounded-2xl group-hover:bg-[#D4AF37]/10 transition-colors">
+                    <Phone className="text-[#0A1128] h-6 w-6" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Email Us</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">{FIRM_DETAILS.email}</p>
+                  <div className="ml-6">
+                    <h4 className="font-black text-[#0A1128] mb-2 uppercase text-xs tracking-widest">Inquiries</h4>
+                    <p className="text-slate-600 editorial text-lg">Direct: {FIRM_DETAILS.phone}</p>
+                    <p className="text-slate-600 editorial text-lg">WhatsApp: +{FIRM_DETAILS.whatsapp}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="bg-[#1a365d]/5 p-4 rounded-lg">
-                    <Clock className="text-[#1a365d] h-6 w-6" />
+                <div className="flex items-start group">
+                  <div className="bg-slate-50 p-4 rounded-2xl group-hover:bg-[#D4AF37]/10 transition-colors">
+                    <Clock className="text-[#0A1128] h-6 w-6" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Working Hours</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">{FIRM_DETAILS.workingHours}</p>
-                    <p className="text-slate-400 text-xs italic mt-1">Available for emergencies on weekends via WhatsApp.</p>
+                  <div className="ml-6">
+                    <h4 className="font-black text-[#0A1128] mb-2 uppercase text-xs tracking-widest">Hours</h4>
+                    <p className="text-slate-600 editorial text-lg">{FIRM_DETAILS.workingHours}</p>
+                    <p className="text-slate-400 text-xs italic mt-2">Emergency council available 24/7 for active retainers.</p>
                   </div>
                 </div>
               </div>
 
-              {/* Mock Map Placeholder */}
-              <div className="mt-12 h-64 bg-slate-100 rounded-lg border border-slate-200 flex items-center justify-center relative overflow-hidden group">
+              {/* Map Visual */}
+              <div className="mt-16 aspect-video bg-slate-100 rounded-3xl relative overflow-hidden group shadow-inner">
                 <img 
                    src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=800" 
                    alt="Map Placeholder" 
                    className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
-                <div className="relative z-10 text-center px-6">
-                   <div className="bg-white p-3 rounded-full shadow-lg inline-block mb-4">
-                     <MapPin className="text-[#1a365d] h-8 w-8" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="bg-white p-6 rounded-3xl shadow-2xl text-center">
+                     <div className="bg-[#0A1128] p-3 rounded-full inline-block mb-3">
+                        <MapPin className="text-[#D4AF37] h-6 w-6" />
+                     </div>
+                     <p className="font-black text-[#0A1128] text-sm">Western Heights, Nairobi</p>
                    </div>
-                   <p className="font-bold text-[#1a365d]">Western Heights, Westlands</p>
-                   <p className="text-xs text-slate-600">Open in Google Maps</p>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-slate-50 p-10 rounded-2xl border border-slate-100 shadow-xl">
-              <h3 className="text-2xl font-bold text-[#1a365d] mb-8">Consultation Request</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Full Name</label>
+            <div className="bg-white p-12 lg:p-16 rounded-[40px] border border-slate-100 shadow-2xl relative">
+              <div className="absolute -top-6 -left-6 bg-[#D4AF37] p-4 rounded-3xl shadow-lg">
+                <Scale className="text-[#0A1128]" size={24} />
+              </div>
+              <h3 className="text-3xl font-black text-[#0A1128] mb-10 leading-tight">Request Counsel</h3>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
                     <input 
                       required
                       type="text" 
-                      className="w-full px-4 py-3 rounded border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#d4af37]"
-                      placeholder="John Doe"
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      className="w-full bg-slate-50 px-6 py-4 rounded-2xl border border-transparent focus:bg-white focus:border-[#D4AF37] transition-all focus:outline-none"
+                      placeholder="Jane Doe"
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Phone Number</label>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Phone</label>
                     <input 
                       required
                       type="tel" 
-                      className="w-full px-4 py-3 rounded border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#d4af37]"
-                      placeholder="+254 7..."
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="w-full bg-slate-50 px-6 py-4 rounded-2xl border border-transparent focus:bg-white focus:border-[#D4AF37] transition-all focus:outline-none"
+                      placeholder="+254..."
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Email Address</label>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Email Address</label>
                   <input 
                     required
                     type="email" 
-                    className="w-full px-4 py-3 rounded border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#d4af37]"
-                    placeholder="john@example.com"
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full bg-slate-50 px-6 py-4 rounded-2xl border border-transparent focus:bg-white focus:border-[#D4AF37] transition-all focus:outline-none"
+                    placeholder="jane@organization.com"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Practice Area</label>
-                  <select 
-                    className="w-full px-4 py-3 rounded border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#d4af37] bg-white"
-                    onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                  >
-                    <option>Corporate Law</option>
-                    <option>Conveyancing</option>
-                    <option>Dispute Resolution</option>
-                    <option>Family Law</option>
-                    <option>Immigration</option>
-                    <option>Other</option>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Subject of Inquiry</label>
+                  <select className="w-full bg-slate-50 px-6 py-4 rounded-2xl border border-transparent focus:bg-white focus:border-[#D4AF37] transition-all focus:outline-none appearance-none">
+                    <option>Corporate Advisory</option>
+                    <option>Real Estate & Conveyancing</option>
+                    <option>Litigation & Disputes</option>
+                    <option>Estate Planning</option>
+                    <option>Other Legal Matter</option>
                   </select>
                 </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Brief Summary of Matter</label>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Brief Description</label>
                   <textarea 
                     rows={4} 
-                    className="w-full px-4 py-3 rounded border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#d4af37]"
-                    placeholder="How can we help you?"
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    className="w-full bg-slate-50 px-6 py-4 rounded-2xl border border-transparent focus:bg-white focus:border-[#D4AF37] transition-all focus:outline-none"
+                    placeholder="Provide a high-level summary..."
                   ></textarea>
                 </div>
-                <div className="pt-4">
-                  <button type="submit" className="w-full bg-[#1a365d] text-white py-4 rounded font-bold hover:bg-slate-800 transition-colors flex items-center justify-center space-x-2">
-                    <Send size={18} />
-                    <span>Send Message</span>
+                <div className="pt-6">
+                  <button type="submit" className="w-full bg-[#0A1128] text-white py-5 rounded-2xl font-bold text-xs uppercase tracking-[0.3em] hover:bg-[#D4AF37] hover:text-[#0A1128] transition-all flex items-center justify-center space-x-2 shadow-xl shadow-[#0A1128]/10">
+                    <Send size={16} />
+                    <span>Initiate Contact</span>
                   </button>
-                  <p className="text-[10px] text-slate-400 mt-4 text-center">
-                    By submitting this form, you acknowledge that no advocate-client relationship is formed until a formal engagement letter is signed.
+                  <p className="text-[9px] text-slate-400 mt-6 text-center italic">
+                    Submitting this form does not establish an advocate-client relationship. All data is handled according to the Data Protection Act.
                   </p>
                 </div>
               </form>

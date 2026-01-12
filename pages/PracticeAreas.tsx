@@ -1,58 +1,66 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-// Fixed missing Scale import
-import { Briefcase, Home, Gavel, Users, FileText, Globe, Award, Shield, Landmark, Scale } from 'lucide-react';
+import { Briefcase, Home, Gavel, Users, Zap, Shield, ChevronRight, Scale, Globe } from 'lucide-react';
 import { PRACTICE_AREAS } from '../constants';
 
 const PracticeAreas: React.FC = () => {
-  const icons = {
+  const iconMap: any = {
     corporate: <Briefcase />,
     conveyancing: <Home />,
-    "dispute-resolution": <Gavel />,
-    "family-law": <Users />,
-    employment: <FileText />,
-    immigration: <Globe />
+    litigation: <Gavel />,
+    family: <Users />,
+    intellectual: <Zap />
   };
 
   return (
     <div className="bg-white">
-      {/* Header */}
-      <section className="bg-[#1a365d] py-24 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Practice Areas</h1>
-          <p className="text-slate-300 max-w-2xl mx-auto text-lg font-light">
-            Specialized legal expertise tailored to the unique regulatory environment of the Kenyan market.
+      {/* Editorial Header */}
+      <section className="bg-[#0A1128] py-40 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-40 opacity-10 blur-3xl bg-[#D4AF37] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          <h1 className="text-6xl lg:text-8xl font-black tracking-tighter mb-8">Our <span className="text-[#D4AF37]">Expertise</span></h1>
+          <p className="text-xl lg:text-2xl text-slate-300 max-w-3xl editorial leading-relaxed">
+            Specialized legal strategies designed for the complexities of modern commerce, property, and civil life in East Africa.
           </p>
         </div>
       </section>
 
-      {/* Grid */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {/* Main Grid */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
             {PRACTICE_AREAS.map((area) => (
-              <div key={area.id} className="flex space-x-6 p-8 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-lg transition-all">
-                <div className="shrink-0">
-                  <div className="bg-[#1a365d] text-[#d4af37] p-4 rounded-lg shadow-inner">
-                    {icons[area.id as keyof typeof icons] || <Scale />}
+              <div key={area.id} className="bg-white p-12 lg:p-20 group hover:bg-[#0A1128] transition-all duration-700">
+                <div className="flex flex-col h-full">
+                  <div className="mb-12 flex justify-between items-start">
+                    <div className="bg-slate-50 p-6 rounded-2xl text-[#0A1128] group-hover:bg-[#D4AF37] group-hover:text-[#0A1128] transition-all duration-500">
+                      {React.cloneElement(iconMap[area.id] || <Scale />, { size: 32 })}
+                    </div>
+                    <span className="text-6xl font-black text-slate-100 group-hover:text-white/5 transition-colors">
+                      {PRACTICE_AREAS.indexOf(area) + 1 < 10 ? `0${PRACTICE_AREAS.indexOf(area) + 1}` : PRACTICE_AREAS.indexOf(area) + 1}
+                    </span>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#1a365d] mb-4">{area.title}</h3>
-                  <p className="text-slate-600 leading-relaxed mb-6">
+                  
+                  <h3 className="text-3xl font-black text-[#0A1128] group-hover:text-white mb-4">{area.title}</h3>
+                  <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.3em] mb-8">{area.subtitle}</p>
+                  <p className="text-slate-500 group-hover:text-slate-400 leading-relaxed editorial text-lg mb-12">
                     {area.description}
                   </p>
-                  <ul className="space-y-2 mb-8 text-sm text-slate-500 font-medium">
-                    <li className="flex items-center"><Shield className="h-4 w-4 mr-2 text-[#d4af37]" /> LSK Regulated Services</li>
-                    <li className="flex items-center"><Award className="h-4 w-4 mr-2 text-[#d4af37]" /> Expert Advisory</li>
-                  </ul>
-                  <Link 
-                    to="/contact" 
-                    className="inline-block bg-white border border-[#1a365d] text-[#1a365d] px-6 py-2 rounded font-bold hover:bg-[#1a365d] hover:text-white transition-all"
-                  >
-                    Discuss My Case
-                  </Link>
+
+                  <div className="mt-auto">
+                    <div className="flex flex-wrap gap-4 mb-10">
+                      <span className="px-4 py-2 bg-slate-50 group-hover:bg-white/5 rounded-full text-[10px] font-bold text-[#0A1128] group-hover:text-slate-300 border border-slate-100 group-hover:border-white/10 uppercase tracking-widest">
+                        Advisory
+                      </span>
+                      <span className="px-4 py-2 bg-slate-50 group-hover:bg-white/5 rounded-full text-[10px] font-bold text-[#0A1128] group-hover:text-slate-300 border border-slate-100 group-hover:border-white/10 uppercase tracking-widest">
+                        Documentation
+                      </span>
+                    </div>
+                    
+                    <Link to="/contact" className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#0A1128] group-hover:text-[#D4AF37] transition-all">
+                      Secure Consultation <ChevronRight size={14} className="ml-2" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -60,15 +68,13 @@ const PracticeAreas: React.FC = () => {
         </div>
       </section>
 
-      {/* Specialized Services Notice */}
-      <section className="py-16 bg-[#d4af37]/10">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <Landmark className="h-12 w-12 text-[#d4af37] mx-auto mb-6" />
-          <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Other Specialized Services</h2>
-          <p className="text-slate-700 leading-relaxed">
-            In addition to our core practices, we provide advisory on <strong>Intellectual Property (KIPI)</strong>, 
-            <strong>Tax Law (KRA Compliance)</strong>, and <strong>Fintech Regulation</strong>. 
-            If you have a unique legal challenge, our team is equipped to research and resolve it.
+      {/* Cross-border note */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <Globe className="w-12 h-12 text-[#D4AF37] mx-auto mb-8" />
+          <h4 className="text-2xl font-black text-[#0A1128] mb-6">Regional Reach. Local Roots.</h4>
+          <p className="text-slate-600 editorial leading-relaxed">
+            While based in Nairobi, our firm maintains strong corresponding relationships with legal practitioners in Tanzania, Uganda, Rwanda, and Ethiopia, providing seamless cross-border legal support for your regional ambitions.
           </p>
         </div>
       </section>

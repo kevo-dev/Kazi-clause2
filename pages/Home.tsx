@@ -1,162 +1,153 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Shield, Award, Users, Scale, MessageSquare } from 'lucide-react';
+import { ArrowUpRight, Scale, ShieldCheck, Award, Users, Globe, ChevronRight } from 'lucide-react';
 import { PRACTICE_AREAS, FIRM_DETAILS } from '../constants';
 
 const Home: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="pt-24 lg:pt-0">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-[#0A1128]">
+        <div className="absolute inset-0 opacity-40">
           <img 
-            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000" 
-            alt="Nairobi Skyline Legal Concept" 
-            className="w-full h-full object-cover opacity-20"
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" 
+            alt="Corporate Nairobi" 
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a365d] via-[#1a365d]/90 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1128] via-[#0A1128]/80 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
-          <div className="max-w-2xl">
-            <span className="inline-block bg-[#d4af37] text-[#1a365d] px-4 py-1 text-xs font-bold uppercase tracking-widest mb-6 rounded-sm">
-              Premier Kenyan Law Firm
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-              Professional Integrity. <br />
-              <span className="text-[#d4af37]">Legal Excellence.</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full text-white">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center px-3 py-1 bg-[#D4AF37]/20 border border-[#D4AF37]/30 rounded-full mb-8">
+              <span className="w-2 h-2 bg-[#D4AF37] rounded-full mr-2 animate-pulse"></span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">Available for Corporate Advisory</span>
+            </div>
+            <h1 className="text-5xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
+              Defining the <span className="text-[#D4AF37]">Standard</span> of Justice.
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light">
-              Mwaniki & Associates Advocates provides tailored legal solutions for individuals, SMEs, and global corporations navigating the Kenyan legal landscape.
+            <p className="text-lg lg:text-xl text-slate-300 mb-12 max-w-xl editorial leading-relaxed">
+              Based in the heart of Nairobi, we provide a sophisticated legal bridge between complex local regulations and global commercial ambitions.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link 
-                to="/contact" 
-                className="bg-[#d4af37] text-[#1a365d] px-8 py-4 rounded-md font-bold text-center hover:bg-yellow-500 transition-all flex items-center justify-center group"
-              >
-                Schedule Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/contact" className="bg-[#D4AF37] text-[#0A1128] px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white transition-all flex items-center justify-center group">
+                Begin Engagement
+                <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </Link>
-              <Link 
-                to="/practice-areas" 
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-md font-bold text-center hover:bg-white/20 transition-all"
-              >
-                View Practice Areas
+              <Link to="/practice-areas" className="border border-white/20 hover:bg-white/10 px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest transition-all text-center">
+                Our Capabilities
               </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Stats */}
+        <div className="absolute bottom-12 right-12 hidden lg:flex items-center space-x-12 text-white border-l border-white/20 pl-12">
+          <div>
+            <div className="text-3xl font-black text-[#D4AF37]">15+</div>
+            <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Years of Practice</div>
+          </div>
+          <div>
+            <div className="text-3xl font-black text-[#D4AF37]">2k+</div>
+            <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Closed Cases</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Identity Statement */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+            <div>
+              <h2 className="text-sm font-bold text-[#D4AF37] uppercase tracking-[0.4em] mb-6">Strategic Integrity</h2>
+              <h3 className="text-4xl lg:text-5xl font-black text-[#0A1128] leading-tight mb-8">
+                A Modern Law Firm for a Shifting Economy.
+              </h3>
+              <p className="text-slate-600 editorial text-lg leading-relaxed mb-8">
+                The Kenyan legal landscape is evolving. From the digitalization of land registries to the complexities of the Data Protection Act, we ensure your interests are not just protected, but positioned for advantage.
+              </p>
+              <div className="grid grid-cols-2 gap-8">
+                <div className="flex flex-col">
+                  <span className="font-black text-[#0A1128] text-xl mb-1">LSK Certified</span>
+                  <span className="text-sm text-slate-500">Regulated practitioners in high standing.</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-black text-[#0A1128] text-xl mb-1">E-Citizen Ready</span>
+                  <span className="text-sm text-slate-500">Seamless integration with digital registries.</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square bg-slate-100 rounded-3xl overflow-hidden relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1000" 
+                  alt="Legal Meeting" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+              <div className="absolute -bottom-12 -left-12 bg-[#0A1128] p-10 rounded-3xl text-white hidden lg:block shadow-2xl">
+                <ShieldCheck className="w-12 h-12 text-[#D4AF37] mb-4" />
+                <p className="text-xl font-black mb-1">0% Compromise</p>
+                <p className="text-xs text-slate-400 tracking-widest uppercase">Ethical Leadership</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section className="py-12 bg-slate-50 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em] mb-8">Trusted by clients across sectors</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all">
-            <span className="text-xl font-bold text-[#1a365d]">KENYA POWER</span>
-            <span className="text-xl font-bold text-[#1a365d]">NCBA BANK</span>
-            <span className="text-xl font-bold text-[#1a365d]">SAFARICOM</span>
-            <span className="text-xl font-bold text-[#1a365d]">BRITAM</span>
-            <span className="text-xl font-bold text-[#1a365d]">KRA</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Practice Areas Overview */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-bold text-[#d4af37] uppercase tracking-[0.3em] mb-4">Our Expertise</h2>
-            <h3 className="text-4xl font-bold text-[#1a365d] mb-6">Comprehensive Legal Solutions</h3>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              We offer a full spectrum of legal services designed to protect your interests and foster growth within the Kenyan regulatory framework.
-            </p>
+      {/* Practice Bento Grid */}
+      <section className="py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
+            <div className="max-w-xl">
+              <h2 className="text-sm font-bold text-[#D4AF37] uppercase tracking-[0.4em] mb-4">Core Competencies</h2>
+              <h3 className="text-4xl lg:text-5xl font-black text-[#0A1128]">Expertise Across Sectors.</h3>
+            </div>
+            <Link to="/practice-areas" className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] flex items-center group">
+              View All Specializations
+              <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PRACTICE_AREAS.slice(0, 6).map((area) => (
-              <div key={area.id} className="group p-8 border border-slate-100 bg-slate-50 rounded-lg hover:bg-[#1a365d] transition-all duration-300 shadow-sm hover:shadow-xl">
-                <div className="mb-6 inline-block p-4 bg-white rounded-lg shadow-sm text-[#1a365d] group-hover:bg-[#d4af37] transition-colors">
-                  <Scale className="h-6 w-6" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PRACTICE_AREAS.map((area, idx) => (
+              <div 
+                key={area.id}
+                className={`bento-card p-10 rounded-3xl border border-slate-200 bg-white flex flex-col justify-between ${
+                  area.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''
+                }`}
+              >
+                <div>
+                  <div className="bg-[#0A1128] w-12 h-12 rounded-xl flex items-center justify-center mb-10 text-[#D4AF37]">
+                    <Scale className="w-6 h-6" />
+                  </div>
+                  <h4 className="text-2xl font-black text-[#0A1128] mb-2">{area.title}</h4>
+                  <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest mb-6">{area.subtitle}</p>
+                  <p className="text-slate-500 text-sm leading-relaxed max-w-xs">{area.description}</p>
                 </div>
-                <h4 className="text-xl font-bold mb-4 text-[#1a365d] group-hover:text-white">{area.title}</h4>
-                <p className="text-slate-600 group-hover:text-slate-300 text-sm leading-relaxed mb-6">
-                  {area.description}
-                </p>
-                <Link to="/practice-areas" className="text-[#d4af37] font-semibold text-sm flex items-center group-hover:text-white">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                <div className="mt-12 flex justify-end">
+                  <div className="p-3 bg-slate-50 rounded-full text-[#0A1128]/30 group-hover:text-[#D4AF37] transition-colors">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-[#1a365d] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="text-[#d4af37] font-bold uppercase tracking-widest text-sm mb-4">The Mwaniki Advantage</h2>
-              <h3 className="text-4xl font-bold mb-8 leading-tight">Navigating Kenya's Legal Landscape with Precision</h3>
-              
-              <div className="space-y-8">
-                {[
-                  {
-                    title: "Deep Local Insights",
-                    desc: "We understand the nuances of the Kenyan business environment, eCitizen platforms, and LSK regulations.",
-                    icon: <CheckCircle className="text-[#d4af37] h-6 w-6" />
-                  },
-                  {
-                    title: "Result-Oriented Approach",
-                    desc: "Our focus is always on achieving the best practical outcome for our clients, whether through litigation or mediation.",
-                    icon: <Award className="text-[#d4af37] h-6 w-6" />
-                  },
-                  {
-                    title: "Client-Centric Service",
-                    desc: "We provide transparent, timely, and accessible legal advice, keeping you informed at every step of the process.",
-                    icon: <Users className="text-[#d4af37] h-6 w-6" />
-                  }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start space-x-4">
-                    <div className="shrink-0 mt-1 bg-[#d4af37]/20 p-2 rounded">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold mb-2">{item.title}</h4>
-                      <p className="text-slate-400 text-sm">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1000" 
-                alt="Law Library" 
-                className="rounded-lg shadow-2xl relative z-10"
-              />
-              <div className="absolute -bottom-8 -left-8 w-64 h-64 border-8 border-[#d4af37] z-0 hidden lg:block"></div>
-            </div>
-          </div>
+      {/* Testimonial / Quote */}
+      <section className="py-32 bg-[#0A1128] text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 p-40 opacity-5">
+           <Scale className="w-96 h-96" />
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#1a365d] mb-8">Ready to secure your legal position?</h2>
-          <p className="text-slate-600 mb-12 text-lg">
-            Consult with our expert advocates today. We offer preliminary assessments for corporate and property matters.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link to="/contact" className="w-full sm:w-auto bg-[#1a365d] text-white px-10 py-4 rounded font-bold hover:bg-slate-800 transition-all">
-              Book a Consultation
-            </Link>
-            <a href={`tel:${FIRM_DETAILS.phone}`} className="w-full sm:w-auto flex items-center justify-center space-x-2 text-[#1a365d] font-bold border-2 border-[#1a365d] px-10 py-4 rounded hover:bg-[#1a365d] hover:text-white transition-all">
-              Call {FIRM_DETAILS.phone}
-            </a>
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-6xl font-black leading-tight mb-12">
+            "We don't just solve problems; we prevent them from ever surfacing."
+          </h2>
+          <div className="flex flex-col items-center">
+            <div className="w-16 h-1 bg-[#D4AF37] mb-8"></div>
+            <p className="font-bold uppercase tracking-[0.3em] text-[#D4AF37] text-xs">Silas Mwaniki, Managing Partner</p>
           </div>
         </div>
       </section>

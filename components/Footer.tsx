@@ -1,81 +1,93 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Scale, Phone, Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Scale, Phone, Mail, MapPin, Linkedin, Twitter, Instagram, ChevronRight } from 'lucide-react';
 import { FIRM_DETAILS } from '../constants';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#1a365d] text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Firm Identity */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
-              <Scale className="h-8 w-8 text-[#d4af37]" />
+    <footer className="bg-[#0A1128] text-white pt-32 pb-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-32">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="flex items-center mb-8 group">
+              <div className="bg-white/10 p-2 rounded mr-3">
+                <Scale className="h-6 w-6 text-[#D4AF37]" />
+              </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-white leading-none">MWANIKI</span>
-                <span className="text-[10px] font-semibold text-[#d4af37] tracking-widest uppercase">& ASSOCIATES</span>
+                <span className="text-xl font-black tracking-tighter uppercase">MWANIKI</span>
+                <span className="text-[9px] font-bold text-[#D4AF37] tracking-[0.3em] -mt-1 uppercase">Advocates</span>
               </div>
             </Link>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              Advocates of the High Court of Kenya. Committed to integrity, excellence, and the relentless pursuit of justice for our clients.
+            <p className="text-slate-400 text-sm leading-relaxed mb-8 editorial">
+              A premier law firm committed to navigating the intricacies of Kenyan law with international excellence and strategic foresight.
             </p>
             <div className="flex space-x-4">
-              <a href={FIRM_DETAILS.socials.linkedin} className="text-slate-400 hover:text-[#d4af37] transition-colors"><Linkedin size={20} /></a>
-              <a href={FIRM_DETAILS.socials.twitter} className="text-slate-400 hover:text-[#d4af37] transition-colors"><Twitter size={20} /></a>
+              {[Linkedin, Twitter, Instagram].map((Icon, i) => (
+                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:text-[#0A1128] transition-all">
+                  <Icon size={16} />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-[#d4af37] font-semibold mb-6 uppercase tracking-wider text-sm">Navigation</h3>
-            <ul className="space-y-4 text-sm text-slate-300">
-              <li><Link to="/about" className="hover:text-white transition-colors">About the Firm</Link></li>
-              <li><Link to="/practice-areas" className="hover:text-white transition-colors">Practice Areas</Link></li>
-              <li><Link to="/team" className="hover:text-white transition-colors">Our Advocates</Link></li>
-              <li><Link to="/insights" className="hover:text-white transition-colors">Legal Insights</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#D4AF37] mb-8">Navigation</h4>
+            <ul className="space-y-4">
+              {['About', 'Practice Areas', 'Team', 'Insights', 'Contact'].map((item) => (
+                <li key={item}>
+                  <Link 
+                    to={`/${item.toLowerCase().replace(' ', '-')}`} 
+                    className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors flex items-center group"
+                  >
+                    <ChevronRight size={12} className="mr-2 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Legal Info */}
           <div>
-            <h3 className="text-[#d4af37] font-semibold mb-6 uppercase tracking-wider text-sm">Contact</h3>
-            <ul className="space-y-4 text-sm text-slate-300">
-              <li className="flex items-start space-x-3">
-                <MapPin size={18} className="text-[#d4af37] shrink-0 mt-0.5" />
-                <span>{FIRM_DETAILS.address}</span>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#D4AF37] mb-8">Connect</h4>
+            <ul className="space-y-6">
+              <li className="flex items-start">
+                <MapPin size={16} className="text-[#D4AF37] mr-4 shrink-0 mt-1" />
+                <span className="text-sm text-slate-300 leading-relaxed">{FIRM_DETAILS.address}</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone size={18} className="text-[#d4af37] shrink-0" />
-                <span>{FIRM_DETAILS.phone}</span>
+              <li className="flex items-center">
+                <Phone size={16} className="text-[#D4AF37] mr-4 shrink-0" />
+                <span className="text-sm text-slate-300">{FIRM_DETAILS.phone}</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail size={18} className="text-[#d4af37] shrink-0" />
-                <span>{FIRM_DETAILS.email}</span>
+              <li className="flex items-center">
+                <Mail size={16} className="text-[#D4AF37] mr-4 shrink-0" />
+                <span className="text-sm text-slate-300">{FIRM_DETAILS.email}</span>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter / eCitizen compliance note */}
+          {/* Compliance */}
           <div>
-            <h3 className="text-[#d4af37] font-semibold mb-6 uppercase tracking-wider text-sm">Resources</h3>
-            <p className="text-xs text-slate-400 mb-4 leading-relaxed">
-              Compliant with the Kenya Data Protection Act and LSK rules on professional conduct.
-            </p>
-            <Link to="/contact" className="inline-block border border-[#d4af37] text-[#d4af37] px-6 py-2 text-xs font-semibold hover:bg-[#d4af37] hover:text-[#1a365d] transition-all">
-              SECURE CONSULTATION
-            </Link>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#D4AF37] mb-8">LSK Status</h4>
+            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <p className="text-xs text-slate-400 leading-relaxed mb-4 italic">
+                All our advocates are active members of the Law Society of Kenya (LSK) and are fully compliant with the Advocate's Act.
+              </p>
+              <div className="flex items-center text-[10px] font-bold text-[#D4AF37] uppercase tracking-widest">
+                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                Practice Status: Active
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-700/50">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-slate-400">
-            <p>&copy; {new Date().getFullYear()} {FIRM_DETAILS.name}. All Rights Reserved.</p>
-            <div className="flex space-x-6 italic">
-              <p>Disclaimer: This website does not constitute legal advice. No advocate-client relationship is formed by using this site.</p>
-            </div>
+        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 gap-4">
+          <p>© {new Date().getFullYear()} {FIRM_DETAILS.name}.</p>
+          <div className="flex space-x-8">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Engagement</a>
           </div>
         </div>
       </div>
