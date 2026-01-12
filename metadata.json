@@ -1,0 +1,7 @@
+{
+  "name": "Mwaniki & Associates Advocates",
+  "description": "A premier Kenyan law firm specializing in corporate law, conveyancing, and dispute resolution, dedicated to professional excellence and client-centric legal solutions.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
